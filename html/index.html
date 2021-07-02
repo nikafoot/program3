@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>eelテスト</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        
+        <div class="container">
+            <h2>eelテスト</h2>
+            <div class="form-group">
+                <br>csvファイル名：</br>
+                <input class="col-sm-8" id="csv_name" type="text"></input>
+                <br>検索：</br>
+                <input class="col-sm-8" id="search_word" type="text"></input>
+                <br>
+                    <button class="btn btn-outline-success" id="search">検索</button>
+                </br> 
+                <textarea class="col-sm-8" id="aa"></textarea>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="./eel.js"></script>
+        <script>
+            search.addEventListener('click', () => {
+                    ///if(search_word.value==""){
+                       // alert("キーワードを入力してください")
+                        //return false;
+                   // }
+                   // else{
+                    //    return true;
+                    //}
+                    eel.kimetsu_search(search_word.value,csv_name.value)
+                }
+            )
+
+            eel.expose(view_log_js)
+            function view_log_js(text){
+                aa.value += text + "\n";
+            }
+        </script>
+    </body>
+</html>
